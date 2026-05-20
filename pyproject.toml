@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finance-tracker"
+version = "0.1.0"
+description = "Personal finance tracking CLI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Marcus Reilly", email = "marcus.reilly@example.com" },
+]
+dependencies = [
+    "click>=8.1",
+    "python-dateutil>=2.9",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+finance = "finance_tracker.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

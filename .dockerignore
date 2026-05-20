@@ -1,0 +1,39 @@
+# Keep the image small. Note: .git is NOT excluded — some downstream
+# tooling (CI, version-stamping) wants access to the history.
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# Tooling
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data files (never bake into image)
+*.db
+*.sqlite
+*.sqlite3
+data/

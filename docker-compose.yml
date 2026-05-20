@@ -1,0 +1,18 @@
+# Convenience wrapper for local use.
+#
+#   docker compose run --rm finance account list
+#   docker compose run --rm finance transaction add 12.34 --account Checking ...
+#
+# Data persists in the named volume `finance-data`.
+
+services:
+  finance:
+    build: .
+    image: finance-tracker:local
+    volumes:
+      - finance-data:/data
+    environment:
+      FINANCE_DATABASE_PATH: /data/finance.db
+
+volumes:
+  finance-data:
